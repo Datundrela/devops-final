@@ -1,0 +1,34 @@
+{
+  "name": "devops-final",
+  "version": "2.0.0",
+  "description": "Final DevOps project — merged midterm and pipeline assignments with security, Docker, and reliability improvements",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "jest --forceExit",
+    "lint": "eslint .",
+    "audit": "npm audit --audit-level=high",
+    "setup": "bash scripts/setup.sh",
+    "setup:docker": "bash scripts/setup.sh --docker",
+    "deploy": "bash scripts/deploy.sh",
+    "deploy:docker": "bash scripts/deploy-docker.sh",
+    "rollback": "bash scripts/rollback.sh",
+    "rollback:docker": "bash scripts/rollback-docker.sh",
+    "monitor": "bash scripts/monitor.sh",
+    "validate:env": "bash scripts/env-validate.sh",
+    "post-deploy": "bash scripts/post-deploy-check.sh"
+  },
+  "keywords": ["devops", "ci-cd", "docker"],
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.3.0",
+    "globals": "^17.6.0",
+    "jest": "^30.3.0",
+    "supertest": "^7.2.2"
+  }
+}

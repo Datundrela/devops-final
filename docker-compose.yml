@@ -1,0 +1,72 @@
+services:
+  app-blue:
+    build: .
+    container_name: devops-app-blue
+    environment:
+      PORT: 3000
+      APP_ENV: blue
+      NODE_ENV: production
+    ports:
+      - "3001:3000"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    restart: unless-stopped
+    profiles: ["blue-green"]
+
+  app-green:
+    build: .
+    container_name: devops-app-green
+    environment:
+      PORT: 3000
+      APP_ENV: green
+      NODE_ENV: production
+    ports:
+      - "3002:3000"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    restart: unless-stopped
+    profiles: ["blue-green"]
+
+  nginx:
+    image: nginx:1.27-alpine
+    container_name: devops-router
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ./nginx/active-upstream.conf:/etc/nginx/conf.d/active-upstream.conf:ro
+    depends_on:
+      app-blue:
+        condition: service_healthy
+        required: false
+      app-green:
+        condition: service_healthy
+        required: false
+    restart: unless-stopped
+    profiles: ["blue-green"]
+
+  app:
+    build: .
+    container_name: devops-app
+    environment:
+      PORT: 3000
+      APP_ENV: docker
+      NODE_ENV: production
+    ports:
+      - "3000:3000"
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3000/health"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    restart: unless-stopped
+    profiles: ["default"]
