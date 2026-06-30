@@ -198,14 +198,23 @@ The GitHub Actions workflow (`.github/workflows/ci.yml`) runs on every push/PR t
 ## Screenshots
 
 ![DevOps Setup Screen](images/devops%20screen%201.png)
+------------------------------------------------------
 ![DevOps Setup Screen](images/devops%20screen%202.png)
+------------------------------------------------------
 ![DevOps Setup Screen](images/devops%20screen%203.png)
+------------------------------------------------------
 ![DevOps Setup Screen](images/devops%20screen%204.png)
+------------------------------------------------------
 ![DevOps Setup Screen](images/devops%20screen%205.png)
+------------------------------------------------------
 ![DevOps Setup Screen](images/devops%20screen%206.png)
+------------------------------------------------------
 ![DevOps Setup Screen](images/devops%20screen%207.png)
+------------------------------------------------------
 ![DevOps Setup Screen](images/devops%20screen%208.png)
+------------------------------------------------------
 ![DevOps Setup Screen](images/devops%20screen%209.png)
+------------------------------------------------------
 ![DevOps Setup Screen](images/devops%20screen%2010.png)
 
 ---
