@@ -197,14 +197,7 @@ The GitHub Actions workflow (`.github/workflows/ci.yml`) runs on every push/PR t
 
 ## Screenshots
 
-| Feature | Screenshot |
-|---------|------------|
-| CI pipeline passing | `images/ci-pipeline.png` |
-| Security scans (Trivy/Gitleaks) | `images/security-scans.png` |
-| Blue-green deployment | `images/deployment.png` |
-| Health monitoring logs | `images/monitoring.png` |
-| Docker deployment | `images/docker-deploy.png` |
-| Rollback | `images/rollback.png` |
+images/devops screen 1.png
 
 ---
 
