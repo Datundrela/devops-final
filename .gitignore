@@ -1,0 +1,10 @@
+node_modules/
+health.log
+alert.log
+.env
+*.log
+.DS_Store
+coverage/
+.docker-active-env
+audit-report.json
+trivy-results.sarif

@@ -1,0 +1,13 @@
+node_modules
+npm-debug.log
+.git
+.github
+*.md
+docs
+images
+health.log
+alert.log
+.env
+coverage
+*.test.js
+eslint.config.mjs
